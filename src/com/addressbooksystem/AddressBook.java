@@ -1,5 +1,5 @@
 /*
- * UC3- TO edit existing contact person using their name.. 
+ * UC3- TO delete a person using person's name.. 
  * 
  * @author : Navaya shree
  * @since : 25-10-21
@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class AddressBook { 
+public class AddressBook {
 	static List<ContactPerson> contactList = new ArrayList<>();
 	static Scanner sc = new Scanner(System.in);
 
@@ -35,27 +35,33 @@ public class AddressBook {
 		ContactPerson addressBook = new ContactPerson(firstName, lastName, email, city, state, phoneNumber, zip);
 		contactList.add(addressBook);
 	}
-	
+
 	// method for editing existing contact
-		public void editContact()
-		{
-			Scanner nameInput = new Scanner(System.in);
-			System.out.println(" Enter the first name ");
-			String fName = nameInput.nextLine();
-			for(int index = 0 ; index < contactList.size(); index++)
-			{
-				if (contactList.get(index).getFirstName().equals(fName))
-				{
-					contactList.remove(index);
-					AddressBook addressBook = new AddressBook();
-					addressBook.addContact();				
-				}
-				else
-				{
-					System.out.println(" There is no contact ");
-				}
+	public void editContact() {
+		Scanner nameInput = new Scanner(System.in);
+		System.out.println(" Enter the first name ");
+		String fName = nameInput.nextLine();
+		for (int index = 0; index < contactList.size(); index++) {
+			if (contactList.get(index).getFirstName().equals(fName)) {
+				contactList.remove(index);
+				AddressBook addressBook = new AddressBook();
+				addressBook.addContact();
+			} else {
+				System.out.println(" There is no contact ");
 			}
 		}
+	}
 
+	public void deleteContact() {
+		Scanner deleteNameInput = new Scanner(System.in);
+		String deleteFirstName = deleteNameInput.nextLine();
+		for (int increment = 0; increment < contactList.size(); increment++) {
+			if (contactList.get(increment).getFirstName().equals(deleteFirstName)) {
+				contactList.remove(increment);
+			} else {
+				System.out.println(" Name does not exist");
+			}
+		}
+	}
 
 }
