@@ -1,10 +1,11 @@
 package com.addressbooksystem;
 
-public class ContactPerson {    
+public class ContactPerson {
 	private String firstName, lastName, city, state, email;
-	private long zip,phoneNumber;
-	
-	ContactPerson(String firstName, String lastName, String email, String city, String state,long phoneNumber, long zip)  {
+	private long zip, phoneNumber;
+
+	ContactPerson(String firstName, String lastName, String email, String city, String state, long phoneNumber,
+			long zip) {
 		super();
 		this.firstName = firstName;
 		this.lastName = lastName;
@@ -74,8 +75,8 @@ public class ContactPerson {
 	@Override
 	public String toString() {
 		return "Contact details:" + "\n" + "FirstName=" + firstName + "\n" + "LastName=" + lastName + "\n" + "City="
-				+ city + "\n" + "State=" + state + "\n" + "Zip=" + zip + "\n" + 
-				 "PhoneNumber=" + phoneNumber + "\n" + "Email=" + email;
+				+ city + "\n" + "State=" + state + "\n" + "Zip=" + zip + "\n" + "PhoneNumber=" + phoneNumber + "\n"
+				+ "Email=" + email;
 
 	}
 
